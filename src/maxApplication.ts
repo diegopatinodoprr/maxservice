@@ -1,7 +1,7 @@
 import express = require("express");
 import { Application } from "express";
 
-class App {
+class maxApplication {
     public app: Application;
     public port: number;
 
@@ -40,9 +40,9 @@ class App {
     public listen() {
         this.app.listen(this.port, () => {
             // tslint:disable-next-line:no-console
-            console.log("App listening on the http://localhost:${this.port}");
+            console.log("App listening on the http://localhost:"+this.port);
         });
     }
 }
 
-export default App;
+export default maxApplication;
