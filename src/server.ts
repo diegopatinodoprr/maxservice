@@ -7,12 +7,17 @@ import loggerMiddleware from "./Middleware/loggerMiddleware ";
 
 import ScoreController from "./controllers/ScoreController";
 
+import { ScoreQuery } from './Queries/ScoreQuery';
+import { Repository } from './Persistance/Repository';
+
+const scoreQuery = new ScoreQuery(new Repository())
 const app = new App({
     port: 3000,
     // tslint:disable-next-line:object-literal-sort-keys
     controllers: [
-        new ScoreController()
-    ],
+
+        new ScoreController(scoreQuery)],
+
     middleWares: [
         bodyParser.json(),
         bodyParser.urlencoded({ extended: true }),
