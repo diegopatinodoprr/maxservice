@@ -1,4 +1,4 @@
-import App from "./app";
+import maxApplication from "./maxApplication";
 
 import * as bodyParser from "body-parser";
 import loggerMiddleware from "./Middleware/loggerMiddleware ";
@@ -11,8 +11,8 @@ import { ScoreQuery } from './Queries/ScoreQuery';
 import { Repository } from './Persistance/Repository';
 
 const scoreQuery = new ScoreQuery(new Repository())
-const app = new App({
-    port: 3000,
+const app = new maxApplication({
+    port: 5000,
     // tslint:disable-next-line:object-literal-sort-keys
     controllers: [
 
