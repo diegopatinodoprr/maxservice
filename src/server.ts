@@ -12,7 +12,7 @@ import { Repository } from './Persistance/Repository';
 
 const scoreQuery = new ScoreQuery(new Repository())
 const app = new maxApplication({
-    port: 5000,
+   
     // tslint:disable-next-line:object-literal-sort-keys
     controllers: [
 

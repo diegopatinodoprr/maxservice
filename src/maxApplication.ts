@@ -3,12 +3,10 @@ import { Application } from "express";
 
 class maxApplication {
     public app: Application;
-    public port: number;
+    public port = process.env.PORT || 5000;
 
-    constructor(appInit: { port: number; middleWares: any; controllers: any; }) {
+    constructor(appInit: {  middleWares: any; controllers: any; }) {
         this.app = express();
-        this.port = appInit.port;
-
         this.middlewares(appInit.middleWares);
         this.routes(appInit.controllers);
         this.assets();
@@ -40,7 +38,7 @@ class maxApplication {
     public listen() {
         this.app.listen(this.port, () => {
             // tslint:disable-next-line:no-console
-            console.log("App listening on the http://localhost:"+this.port);
+            console.log("App listening on the http://localhost:" + this.port);
         });
     }
 }

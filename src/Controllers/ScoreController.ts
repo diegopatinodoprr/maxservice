@@ -7,7 +7,7 @@ import { IScoreQuery } from '../Queries/ScoreQuery.interface';
 import { ScoreQuery } from '../Queries/ScoreQuery';
 import { json } from "body-parser";
 class ScoreController implements IControllerBase {
-    public path = "/";
+    public path = "/api";
     public router = express.Router();
     private scoreQuery: IScoreQuery
     constructor(scoreQuery) {
