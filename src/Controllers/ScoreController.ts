@@ -18,8 +18,8 @@ class ScoreController implements IControllerBase {
 
     public initRoutes() {
 
-        this.router.get("/", this.getScores);
-        this.router.post("/", this.addScore);
+        this.router.get("/api", this.getScores);
+        this.router.post("/api", this.addScore);
     }
 
     getScores = (req: Request, res: Response) => {
