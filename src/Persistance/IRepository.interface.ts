@@ -1,5 +1,5 @@
 import Score from "Models/Score";
-import Worker from "Models/worker";
+import Worker from "Models/Worker";
 
 export interface IRepository {
     getscores(): [Score]

@@ -5,7 +5,7 @@ import loggerMiddleware from "./Middleware/loggerMiddleware ";
 
 // tslint:disable-next-line:comment-format
 
-import ScoreController from "./controllers/ScoreController";
+import ScoreController from "./Controllers/ScoreController";
 
 import { ScoreQuery } from './Queries/ScoreQuery';
 import { Repository } from './Persistance/Repository';
