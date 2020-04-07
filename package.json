@@ -2,14 +2,16 @@
     "name": "maxservice",
     "version": "1.0.0",
     "description": "",
+    "engines": {
+        "node": "12.x"
+    },
     "main": "index.js",
     "scripts": {
         "dev": "ts-node src/server.ts",
-        "start": "ts-node dist/server.js",
+        "start": "npm run build && ts-node dist/server.js",
         "build": "tsc -p ."
     },
     "dependencies": {
-
         "body-parser": "^1.19.0",
         "express": "^4.17.1",
         "pug": "^2.0.4",
