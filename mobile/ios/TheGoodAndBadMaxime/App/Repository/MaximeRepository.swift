@@ -109,9 +109,9 @@ public class MaximeRepository:IMaximeRepository{
 }
 
 public struct ScoreModel:Codable {
-    var id: String
+    var id: String?
     var value: Int
-    var creationDate: Date
+    var creationDate: Date?
 
 }
 

@@ -4,3 +4,5 @@ export interface IScoreQuery {
     add(score: Score)
 
 }
+
+

@@ -9,7 +9,8 @@
 import Foundation
 import Alamofire
 public class MaximeRemoteRepository:IMaximeRepository{
-    private  let webserviceUrl:String = "http://localhost:3000/"
+    //private  let webserviceUrl:String = "https://secure-lowlands-40055.herokuapp.com/"
+     private  let webserviceUrl:String = "http://localhost:5000/api"
 
     var scores = [ScoreModel]()
 

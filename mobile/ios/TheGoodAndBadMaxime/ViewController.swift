@@ -29,7 +29,7 @@ class ViewController: UIViewController ,MaximeViewProtocol{
 
     required init?(coder: NSCoder){
        //let repo = MaximeRepository()
-        let repo = MaximeRepository()
+        let repo = MaximeRemoteRepository()
         mLemortVm = MaximeViewModel("mLemort",repo: repo)
         mTournierVm = MaximeViewModel("mTournier",repo: repo)
         repo.delegates = [mLemortVm,mTournierVm]
