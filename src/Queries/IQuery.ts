@@ -9,12 +9,11 @@ export class ScoreQuery implements IScoreQuery {
         
     }
     public get(): [Score] {
-        return this.repository.getScores()
+        return this.repository.getscores()
     }
     public add(score: Score){
+        console.log(score)
         this.repository.addScore(score) 
     }
 
 }
-
-

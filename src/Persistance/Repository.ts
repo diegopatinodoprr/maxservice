@@ -4,9 +4,9 @@ import { IRepository } from './IRepository.interface';
 export class Repository implements IRepository {
 
     private scores:[Score]
-    private worers:[Worker]
+    private workers:[Worker]
     constructor(){}
-    getscores(): [Score] {
+    getScores(): [Score] {
         if (this.scores == null)
         {
             this.scores = [null]
@@ -23,10 +23,19 @@ export class Repository implements IRepository {
         
 
     }
-    addworker(worker: Worker) {
-        throw new Error("Method not implemented.");
+    addWorker(worker: Worker) {
+        if (this.workers == null)
+        {
+            this.workers = [worker]
+        } else {
+            this.workers.push(worker)
+        }
     }
     getWorkers(): [Worker] {
-        throw new Error("Method not implemented.");
+        if (this.workers == null)
+        {
+            this.workers = [null]
+        }
+        return this.workers
     }
 }

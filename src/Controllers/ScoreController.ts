@@ -1,11 +1,8 @@
 import * as express from "express";
 import { Request, Response } from "express";
 import IControllerBase from "../interfaces/IControllerBase.interface"
-
 import Score from "../Models/Score"
-import { IScoreQuery } from '../Queries/ScoreQuery.interface';
-import { ScoreQuery } from '../Queries/ScoreQuery';
-import { json } from "body-parser";
+import { IScoreQuery } from '../Queries/IScoreQuery';
 class ScoreController implements IControllerBase {
     public path = "/api";
     public router = express.Router();
@@ -18,8 +15,8 @@ class ScoreController implements IControllerBase {
 
     public initRoutes() {
 
-        this.router.get("/api", this.getScores);
-        this.router.post("/api", this.addScore);
+        this.router.get("/api/score", this.getScores);
+        this.router.post("/api/score", this.addScore);
     }
 
     getScores = (req: Request, res: Response) => {
@@ -31,7 +28,10 @@ class ScoreController implements IControllerBase {
     addScore = (req: Request, res: Response) => {
 
         let score = Object.setPrototypeOf(req.body, Score.prototype)
-        console.log(typeof (score))
+        for (var k in req.body){
+        
+        console.log(k+ " : "+ req.body[k])
+        }
         this.scoreQuery.add(score)
         res.status(200).send({
             success: true,
