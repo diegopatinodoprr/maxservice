@@ -8,8 +8,7 @@ export class WorkerQuery implements IWorkerQuery {
         this.repository = repository;
     }
     getbyId(id: string): any {
-        let result  = _.filter(this.repository.getWorkers(), (o)=>{return o.id === id})
-        console.log(result)
+        const result  = _.filter(this.repository.getWorkers(), (o)=>{return o.id === id})
         return result
     }
     public get(): [Worker] {

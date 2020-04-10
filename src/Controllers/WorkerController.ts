@@ -21,9 +21,9 @@ class WorkerController implements IControllerBase {
 
     getWorker = (req: Request, res: Response) => {
 
-        const worker = this.workerservice.get()
+        const workers = this.workerservice.get()
 
-        res.send({ worker });
+        res.send(workers );
     }
     addWorker = (req: Request, res: Response) => {
         const result = this.workerservice.add(req.body)
