@@ -1,14 +1,14 @@
 import * as express from "express";
 import { Request, Response } from "express";
-import IControllerBase from "../interfaces/IControllerBase.interface"
-import Score from "../Models/Score"
-import { IScoreQuery } from '../Queries/IScoreQuery';
+import IControllerBase from "../interfaces/IControllerBase.interface";
+import Score from "../Models/Score";
+import { ScoresService } from "../Services/ScoresService";
 class ScoreController implements IControllerBase {
     public path = "/api";
     public router = express.Router();
-    private scoreQuery: IScoreQuery
-    constructor(scoreQuery) {
-        this.scoreQuery = scoreQuery
+    private scoreServie: ScoresService
+    constructor() {
+        this.scoreServie = new ScoresService()
 
         this.initRoutes();
     }
@@ -21,7 +21,7 @@ class ScoreController implements IControllerBase {
 
     getScores = (req: Request, res: Response) => {
 
-        const scores = this.scoreQuery.get()
+        const scores = this.scoreServie.get()
 
         res.send({ scores });
     }
@@ -32,7 +32,7 @@ class ScoreController implements IControllerBase {
         
         console.log(k+ " : "+ req.body[k])
         }
-        this.scoreQuery.add(score)
+        this.scoreServie.add(score)
         res.status(200).send({
             success: true,
             message: 'successfully inserted score'

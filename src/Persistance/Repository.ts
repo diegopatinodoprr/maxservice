@@ -1,5 +1,6 @@
 import Worker from 'Models/Worker';
 import Score from 'Models/Score';
+import { _ }from 'lodash'
 import { IRepository } from './IRepository.interface';
 export class Repository implements IRepository {
 
@@ -11,7 +12,7 @@ export class Repository implements IRepository {
         {
             this.scores = [null]
         }
-        return this.scores
+        return _.filter(this.scores,function(o) { return o != null; })
     }
     addScore(score: Score) {
         if (this.scores == null)
@@ -36,6 +37,6 @@ export class Repository implements IRepository {
         {
             this.workers = [null]
         }
-        return this.workers
+        return   _.filter(this.workers,function(o) { return o != null; })
     }
 }
