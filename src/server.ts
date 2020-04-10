@@ -9,7 +9,6 @@ import { Repository } from './Persistance/Repository';
 const reposytory = new Repository()
 
 const app = new maxApplication({
-   
     // tslint:disable-next-line:object-literal-sort-keys
     controllers: [
         new ScoreController(),
