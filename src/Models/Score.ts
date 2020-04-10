@@ -1,12 +1,14 @@
 import { v4 as uuidv4 } from 'uuid'
 class Score {
     public id 
-    public name
+    public workerId
     public value
+    public creationDate: Number
 
-    constructor( name, value ) {
+    constructor( workerId, value ) {
         this.id = uuidv4()
-        this.name = name
+        this.creationDate = Date.now()
+        this.workerId = workerId
         this.value = value
         
     }

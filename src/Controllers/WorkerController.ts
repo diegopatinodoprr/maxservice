@@ -28,6 +28,9 @@ class WorkerController implements IControllerBase {
     }
     addWorker = (req: Request, res: Response) => {
 
+        
+
+
         let worker = new Worker(req.body.name)
         this.workerservice.add(worker)
         res.status(200).send({
