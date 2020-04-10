@@ -9,7 +9,7 @@ export class ScoreQuery implements IScoreQuery {
         
     }
     public get(): [Score] {
-        return this.repository.getscores()
+        return this.repository.getScores()
     }
     public add(score: Score){
         console.log(score)

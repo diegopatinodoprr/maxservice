@@ -9,6 +9,7 @@
     "scripts": {
         "dev": "ts-node src/server.ts",
         "start": "npm run build && ts-node dist/server.js",
+        "postinstall": "npm fund",
         "build": "tsc -p ."
     },
     "dependencies": {
