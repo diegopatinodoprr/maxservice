@@ -9,8 +9,6 @@ class Score {
         this.id = uuidv4()
         this.creationDate = Date.now()
         this.workerId = workerId
-        this.value = value
-        
-    }
+        this.value = value    }
 }
 export default Score;

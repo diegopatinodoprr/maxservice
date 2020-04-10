@@ -1,16 +1,15 @@
 import { v4 as uuidv4 } from 'uuid'
-import { Url } from 'url';
+import { _ } from 'lodash'
 class Worker {
-    public id: String;
-    public name: String;
-    public icon: Url
+    public id: string;
+    public name: string;
+    public icon: string
 
-    constructor(name:String ,icon: Url ) {
+    constructor(name? :string  ,icon?: string ) {
         this.id = uuidv4()
         this.name = name
         this.icon = icon
 
-
     }
 }
-export default Worker;
+export default Worker
