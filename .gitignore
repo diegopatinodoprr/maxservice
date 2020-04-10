@@ -200,3 +200,5 @@ fastlane/test_output
 
 iOSInjectionProject/
 Pods
+
+.vscode/

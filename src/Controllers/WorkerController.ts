@@ -1,9 +1,8 @@
 import * as express from "express";
 import { Request, Response } from "express";
-import { WorkersService } from "../Services/WorkersService";
 import IControllerBase from "../interfaces/IControllerBase.interface";
+import { WorkersService } from "../Services/WorkersService";
 
-import { WorkerFactory } from "../Factories/WorkerFactory";
 class WorkerController implements IControllerBase {
     public path = "/api";
     public router = express.Router();
@@ -27,12 +26,11 @@ class WorkerController implements IControllerBase {
         res.send({ worker });
     }
     addWorker = (req: Request, res: Response) => {
-        const worker = WorkerFactory.buildWorker(req.body);
-        this.workerservice.add(worker)
+        const result = this.workerservice.add(req.body)
         res.status(200).send({
             success: true,
             message: 'successfully inserted worker',
-            worker
+            worker: result
 
         });
     }

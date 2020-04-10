@@ -26,13 +26,7 @@ class ScoreController implements IControllerBase {
         res.send({ scores });
     }
     addScore = (req: Request, res: Response) => {
-
-        let score = Object.setPrototypeOf(req.body, Score.prototype)
-        for (var k in req.body){
-        
-        console.log(k+ " : "+ req.body[k])
-        }
-        this.scoreServie.add(score)
+        this.scoreServie.add(req.body)
         res.status(200).send({
             success: true,
             message: 'successfully inserted score'
